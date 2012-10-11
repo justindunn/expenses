@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: MyString
+  amount: 1
+  addition: false
+
+two:
+  item: MyString
+  amount: 1
+  addition: false
