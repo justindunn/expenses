@@ -1,4 +1,11 @@
+<div>
 <%= image_tag "logo003.png"%>
+<input type="button" value="Add Deposit/Expense" class="show_hide">
+<span style="text-align:right;">Current Total:<%= number_to_currency(@results) %></span>
+</div>
+<div class="addform">
+<%= render(:partial => 'form') %>
+</div>
 <hr>
 <table id="expense" class="tablesorter">
  <thead>
@@ -22,13 +29,12 @@
     <!--<td><%= link_to 'Show', expense %></td>
     <td><%= link_to 'Edit', edit_expense_path(expense) %></td>-->
 	<td><%= number_to_currency(expense.amount) %></td>
-    <td><%= link_to 'Remove', expense, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Remove', expense, confirm: 'Ok to Remove this Expense/Deposit?', method: :delete %></td>
   </tr>
 <% end %>
 	<tr>
 		<td></td>
 		<td style="text-align:right;">Total Amount:</td>
-		<!--<td><%= number_to_currency(Expense.sum('amount', :conditions => {:addition => true})) %></td>-->
 		<td><%= number_to_currency(@results) %></td>
 		<td></td>
 	</tr>
@@ -37,7 +43,3 @@
 <hr>
 
 <br />
-<input type="button" value="Add Deposit/Expense" class="show_hide">
-<div class="addform">
-<%= render(:partial => 'form') %>
-</div>
