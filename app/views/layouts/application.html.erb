@@ -2,9 +2,36 @@
 <html>
 <head>
   <title>My Expenses</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "tablestyle" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.tablesorter.min" %>
+  <%= javascript_include_tag "jquery-ui-1.9.0.custom.min" %>
+
+	<script type="text/javascript">
+	$(document).ready(function() { 
+	    // call the tablesorter plugin 
+	    $("table").tablesorter({ 
+	        // sort on the first column and third column, order asc 
+	        sortList: [[0,0],[2,0]] 
+	    }); 
+	});
+	</script>
+
   <%= csrf_meta_tags %>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<script type="text/javascript">
+	    $(document).ready(function(){
+				
+		        $(".addform").hide();
+		        $(".show_hide").show();
+
+		    $('.show_hide').click(function(){
+		    $(".addform").slideToggle();
+		    });
+		});
+	</script>
 </head>
 <body>
 

@@ -3,7 +3,10 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @expenses = Expense.all
-
+    @expense = Expense.new(params[:expense])
+    @expenseamountspos = Expense.find_all_by_addition(true)
+    @expenseamountsneg = Expense.find_all_by_addition(false)
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @expenses }
@@ -44,7 +47,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
+        format.html { redirect_to action: "index", notice: 'Expense was successfully created.' }
         format.json { render json: @expense, status: :created, location: @expense }
       else
         format.html { render action: "new" }

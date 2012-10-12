@@ -1,27 +1,42 @@
 <h1>My Expenses</h1>
 
-<table>
+<table id="expense" class="tablesorter">
+ <thead>
   <tr>
-    <th>Item</th>
+    <th>Expense</th>
+    <th>Deposit/Withdrew</th>
     <th>Amount</th>
-    <th>Addition</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
-
+ </thead>
 <% @expenses.each do |expense| %>
+ <tbody>
   <tr>
     <td><%= expense.item %></td>
-    <td><%= expense.amount %></td>
-    <td><%= expense.addition %></td>
-    <td><%= link_to 'Show', expense %></td>
-    <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-    <td><%= link_to 'Destroy', expense, confirm: 'Are you sure?', method: :delete %></td>
+    
+	<% if expense.addition == true %>
+	<td>Deposit</td>
+	<% else %>
+    <td>Withdrew</td>
+	<% end %>
+    <!--<td><%= link_to 'Show', expense %></td>
+    <td><%= link_to 'Edit', edit_expense_path(expense) %></td>-->
+	<td><%= number_to_currency(expense.amount) %></td>
+    <td><%= link_to 'Remove', expense, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+	<tr>
+		<td></td>
+		<td style="text-align:right;">Total Amount:</td>
+		<td>$total</td>
+		<td></td>
+	</tr>
+ </tbody>
 </table>
 
-<br />
 
-<%= link_to 'New Expense', new_expense_path %>
+<br />
+<input type="button" value="Add Deposit/Expense" class="show_hide">
+<div class="addform">
+<%= render(:partial => 'form') %>
+</div>
