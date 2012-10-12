@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Expenses</title>
+  <title>ExpenseTracker.com</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= stylesheet_link_tag "tablestyle" %>
   <%= javascript_include_tag "application" %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js" type="text/javascript"></script>
   <%= javascript_include_tag "jquery.tablesorter.min" %>
   <%= javascript_include_tag "jquery-ui-1.9.0.custom.min" %>
 
 	<script type="text/javascript">
 	$(document).ready(function() { 
 	    // call the tablesorter plugin 
-	    $("table").tablesorter({ 
-	        // sort on the first column and third column, order asc 
-	        sortList: [[0,0],[2,0]] 
-	    }); 
+	    $("#expense").tablesorter(); 
 	});
 	</script>
 
   <%= csrf_meta_tags %>
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+ 	<style>
+	.ui-page{
+		background-image:   url("../../CSS/bgleather.png");
+		background-repeat: repeat;
+		}
+	.error {
+		color: red;
+		font: normal 10px arial;
+		padding: 3px;
+		margin: 3px;
+		background-color: #ffc;
+		border: 1px solid #c00;
+	}
+	</style>
 
 	<script type="text/javascript">
 	    $(document).ready(function(){
@@ -31,6 +43,13 @@
 		    $(".addform").slideToggle();
 		    });
 		});
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+			console.log("verify");
+		$("#new_expense").validate({
+		});
+	});
 	</script>
 </head>
 <body>

@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :item %><br />
-    <%= f.text_field :item %>
+    <label>Item Description</label><br />
+    <%= f.text_field :item, {"placeholder" => "*Example:Paycheck or Lunch", "class" => "required"} %>
   </div>
   <div class="field">
     <%= f.label :amount %><br />
-    <%= f.number_field :amount %>
+    <%= f.number_field :amount, {"placeholder" => "*Example:50.00", "class" => "required"} %>
   </div>
   <div class="field">
-    <%= f.label :addition %><br />
-    <%= f.check_box :addition %>
+    <%= f.label "Deposit/Withdrawal" %><br />
+    <%= f.select :addition, {"Deposit" => true, "Withdrawal" => false} %>
   </div>
   <div class="actions">
     <%= f.submit %>

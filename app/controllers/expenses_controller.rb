@@ -4,8 +4,10 @@ class ExpensesController < ApplicationController
   def index
     @expenses = Expense.all
     @expense = Expense.new(params[:expense])
-    @expenseamountspos = Expense.find_all_by_addition(true)
-    @expenseamountsneg = Expense.find_all_by_addition(false)
+    @expenseamountspos = Expense.sum('amount', :conditions => {:addition => true})
+    @expenseamountsneg = Expense.sum('amount', :conditions => {:addition => false})
+    @results = @expenseamountspos - @expenseamountsneg
+    
    
     respond_to do |format|
       format.html # index.html.erb

@@ -1,5 +1,5 @@
-<h1>My Expenses</h1>
-
+<%= image_tag "logo003.png"%>
+<hr>
 <table id="expense" class="tablesorter">
  <thead>
   <tr>
@@ -28,12 +28,13 @@
 	<tr>
 		<td></td>
 		<td style="text-align:right;">Total Amount:</td>
-		<td>$total</td>
+		<!--<td><%= number_to_currency(Expense.sum('amount', :conditions => {:addition => true})) %></td>-->
+		<td><%= number_to_currency(@results) %></td>
 		<td></td>
 	</tr>
  </tbody>
 </table>
-
+<hr>
 
 <br />
 <input type="button" value="Add Deposit/Expense" class="show_hide">
