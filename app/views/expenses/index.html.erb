@@ -10,15 +10,17 @@
 <table id="expense" class="tablesorter">
  <thead>
   <tr>
+	<th>Date Added</th>
     <th>Expense</th>
     <th>Deposit/Withdrew</th>
     <th>Amount</th>
     <th></th>
   </tr>
  </thead>
-<% @expenses.each do |expense| %>
  <tbody>
+<% @expenses.each do |expense| %>
   <tr>
+	<td><%= expense.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p') %></td>
     <td><%= expense.item %></td>
     
 	<% if expense.addition == true %>
@@ -32,13 +34,14 @@
     <td><%= link_to 'Remove', expense, confirm: 'Ok to Remove this Expense/Deposit?', method: :delete %></td>
   </tr>
 <% end %>
+ </tbody>
 	<tr>
 		<td></td>
 		<td style="text-align:right;">Total Amount:</td>
 		<td><%= number_to_currency(@results) %></td>
 		<td></td>
+		<td></td>
 	</tr>
- </tbody>
 </table>
 <hr>
 
