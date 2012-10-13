@@ -31,7 +31,7 @@
     <!--<td><%= link_to 'Show', expense %></td>
     <td><%= link_to 'Edit', edit_expense_path(expense) %></td>-->
 	<td><%= number_to_currency(expense.amount) %></td>
-    <td><%= link_to 'Remove', expense, confirm: 'Ok to Remove this Expense/Deposit?', method: :delete %></td>
+    <td><%= link_to 'Remove', expense, :confirm => 'Ok to Remove this Expense/Deposit?', :method => :delete %></td>
   </tr>
 <% end %>
  </tbody>
