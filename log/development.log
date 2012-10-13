@@ -17104,3 +17104,97 @@ Served asset /desc.gif - 304 Not Modified (0ms)
 
 Started GET "/assets/asc.gif" for 127.0.0.1 at 2012-10-12 15:36:14 -0400
 Served asset /asc.gif - 304 Not Modified (0ms)
+
+
+Started GET "/expenses?notice=Expense+was+successfully+created." for 127.0.0.1 at 2012-10-12 22:31:06 -0400
+Processing by ExpensesController#index as HTML
+  Parameters: {"notice"=>"Expense was successfully created."}
+  [1m[35mExpense Load (151.8ms)[0m  SELECT `expenses`.* FROM `expenses` 
+Completed 500 Internal Server Error in 1792ms
+
+NoMethodError (undefined method `explain' for #<ActiveRecord::ConnectionAdapters::MysqlAdapter:0x007fb3f5f84de0>):
+  app/controllers/expenses_controller.rb:5:in `index'
+
+
+  Rendered /Users/joedoe/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (54.6ms)
+  Rendered /Users/joedoe/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (76.7ms)
+  Rendered /Users/joedoe/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (461.8ms)
+
+
+Started GET "/expenses?notice=Expense+was+successfully+created." for 127.0.0.1 at 2012-10-12 22:31:18 -0400
+Processing by ExpensesController#index as HTML
+  Parameters: {"notice"=>"Expense was successfully created."}
+  [1m[36mExpense Load (1.2ms)[0m  [1mSELECT `expenses`.* FROM `expenses` [0m
+  [1m[35m (0.5ms)[0m  SELECT SUM(`expenses`.`amount`) AS sum_id FROM `expenses` WHERE `expenses`.`addition` = 1
+  [1m[36m (0.7ms)[0m  [1mSELECT SUM(`expenses`.`amount`) AS sum_id FROM `expenses` WHERE `expenses`.`addition` = 0[0m
+  Rendered expenses/_form.html.erb (326.2ms)
+  Rendered expenses/index.html.erb within layouts/application (2601.4ms)
+Completed 200 OK in 2977ms (Views: 2812.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expenses.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /expenses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.min.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery-ui-1.9.0.custom.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tablestyle.css?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /tablestyle.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/expenses.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /expenses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery-ui-1.9.0.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.min.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery.tablesorter.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.min.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /jquery-ui-1.9.0.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:21 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.min.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:22 -0400
+Served asset /jquery.tablesorter.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.min.js?body=1" for 127.0.0.1 at 2012-10-12 22:31:22 -0400
+Served asset /jquery-ui-1.9.0.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo003.png" for 127.0.0.1 at 2012-10-12 22:31:22 -0400
+Served asset /logo003.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.gif" for 127.0.0.1 at 2012-10-12 22:31:22 -0400
+Served asset /bg.gif - 304 Not Modified (0ms)
